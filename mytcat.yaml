@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mytcatimg
+  name: mytcatimg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mytcatimg
+  template:
+    metadata:
+      labels:
+        app: mytcatimg
+    spec:
+      containers:
+      - image: haridg/tomcat8
+        imagePullPolicy: Always
+        name: mytcatimg
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mytcatimg
+  name: mytcatimg
+spec:
+  ports:
+  - nodePort: 32423
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: mytcatimg
+  type: NodePort
