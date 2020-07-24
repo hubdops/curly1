@@ -6,7 +6,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git url:'https://github.com/hubdops/curly1.git', branch:'test-deploy-stage'  
+        git url:'https://github.com/hubdops/curly1.git', branch:'master'  
       }
     }
 
