@@ -16,7 +16,7 @@ spec:
         app: mytcatimg
     spec:
       containers:
-      - image: haridg/tomcat8
+      - image: nginx
         imagePullPolicy: Always
         name: mytcatimg
 
