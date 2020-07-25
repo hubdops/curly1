@@ -1,6 +1,6 @@
 pipeline {
 
-  agent {label 'kubetcat'}
+  agent any
   stages {
 
     stage('Checkout Source') {
