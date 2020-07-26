@@ -1,11 +1,11 @@
 pipeline {
 
-  agent {label 'kubetcat'}
+  agent { label 'kubetcat' }
   stages {
 
     stage('Checkout Source') {
       steps {
-        git credentialsId: 'hubdops', url:'https://github.com/hubdops/curly1.git', branch:'master'  
+        git url:'https://github.com/hubdops/curly1.git', branch:'master'  
       }
     }
 
