@@ -5,7 +5,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git url:'https://github.com/hubdops/curly1.git', branch:'master'  
+        git credentialsId: 'hubdops', url:'https://github.com/hubdops/curly1.git', branch:'master'  
       }
     }
 
