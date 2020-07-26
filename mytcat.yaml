@@ -3,17 +3,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mytcatimg
+    app: web
   name: mytcatimg
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mytcatimg
+      app: web
   template:
     metadata:
       labels:
-        app: mytcatimg
+        app: web
     spec:
       containers:
       - image: nginx
@@ -25,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: mytcatimg
+    app: web
   name: mytcatimg
 spec:
   ports:
@@ -34,5 +34,5 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: mytcatimg
+    app: web
   type: NodePort
